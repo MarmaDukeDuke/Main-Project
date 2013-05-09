@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do List</title>
+    <style>
+        body{margin:20px;}
+    </style>
+    <script type="text/javascript">
+    var list;
+    var addBtn;
+    document.addEventListener("DOMContentLoaded",load);
+    function load(){
+        list = get("list");
+        checkboxes = getTag("input");
+        addBtn = get("addBtn");
+        addBtn.addEventListener("click",addItem);
+        for(var i = 0, l = checkboxes.length; i < l ; i++){
+            if(checkboxes[i].type == "checkbox")
+                checkboxes[i].addEventListener("click",updatePercent);
+        }
+        if(localStorage.listFile)
+            //list.innerHTML = localStorage.listFile;
+        updatePercent();
+    }
+    function updatePercent(){
+        var checkboxes = getTag("input");
+        var total = checkboxes.length/2;
+        var done = 0;
+        for(var i = 0, l = checkboxes.length; i < l ; i++){
+            if(checkboxes[i].checked)
+                done++;
+        }
+        get("percentage").innerHTML = "Done: " + Math.round((done/total)*100) + "%";
+    }
+    function addItem(){
+        var item = document.createElement('li');
+        var chk = document.createElement("input");
+        var txt = document.createElement("input");
+        chk.type = "checkbox";
+        txt.type = "text";
+        chk.addEventListener("click",updatePercent);
+        item.appendChild(chk);
+        item.appendChild(txt);
+        list.appendChild(item);
+        updatePercent();
+    }
+    function get(id){
+        return document.getElementById(id);
+    }
+    function getTag(tag){
+        return document.getElementsByTagName(tag);
+    }
+    function save(){
+        localStorage.listFile = list.innerHTML;
+    }
+    function deleteTsk(){
+	        var i = prompt("Enter number you want to delete") - 1;
+	        var item = getTag("li");
+	        list.removeChild(item[i]);
+    }
+    </script>
+</head>
+<body>
+<center>
+    <h1>To-do list</h1>
+    <ol id="list">
+        <li><input type="checkbox"><input type="text"></li>
+    </ol>
+    <p id="percentage"></p>
+    <button id="addBtn">Add Item</button><button onclick="save()">Save</button><button onclick="deleteTsk()">Delete</button>
+    </center>
+</body>

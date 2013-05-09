@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/containerView"
+	android:background="@android:color/transparent"    
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent" >
+    
+ 		
+		<ImageView
+			android:id="@+id/imgQuestion"
+			android:layout_width="300dip"
+			android:layout_height="150dip"
+			android:scaleType="centerCrop"
+			android:src="@drawable/quiz_bgsmall" 
+    		android:gravity="center_vertical|center_horizontal"
+			android:layout_alignParentTop="true"
+			android:layout_centerInParent="true"
+			android:layout_marginTop="5dip"
+			
+ 		/>		
+		
+		<TextView
+			android:id="@+id/txtQuestion"
+			android:layout_width="300dip"
+			android:layout_height="150dip"
+			android:textSize="26dip"
+			android:textColor="#FFFFFF"
+			android:background="@android:color/transparent"
+    		android:gravity="center_vertical|center_horizontal"
+			android:layout_alignParentTop="true"
+			android:layout_centerInParent="true"
+			android:text=""
+			android:maxLines="10"
+			android:layout_marginTop="0dip"
+		/>
+		
+		<TextView
+			android:id="@+id/txtScore"
+			android:layout_width="fill_parent"
+			android:layout_height="40dip"
+			android:textSize="23dip"
+			android:textColor="#FFFFFF"
+			android:background="@android:color/transparent"
+			android:text="0"
+		  	android:layout_below="@+id/imgQuestion"
+    		android:gravity="center_vertical|center_horizontal"
+		/>	 		
+
+ 		
+ 			<RelativeLayout
+				android:id="@+id/layoutButtons"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+		  		android:layout_below="@+id/imgQuestion"
+				android:orientation="vertical"
+			    android:gravity="center_horizontal"
+			    android:layout_marginTop="40dip"
+				xmlns:android="http://schemas.android.com/apk/res/android"
+			>		    
+		    
+		    
+		  		<Button android:id="@+id/btnAnswer_1" 
+					android:layout_width="fill_parent"
+				    android:layout_height="58dip" 
+				    android:gravity="center_vertical|center_horizontal"
+				  	android:layout_marginLeft="5dip" 
+				  	android:layout_marginRight="5dip"
+				  	android:text="Answer 1" 
+				  	android:textSize="18dip"
+				  	android:layout_below="@+id/txtScore"
+				/>  
+						    
+		  		<Button android:id="@+id/btnAnswer_2" 
+					android:layout_width="fill_parent"
+				    android:layout_height="58dip" 
+				    android:gravity="center_vertical|center_horizontal"
+				  	android:layout_marginLeft="5dip" 
+				  	android:layout_marginRight="5dip"
+        			android:layout_marginTop="5dip"
+				  	android:textSize="18dip"
+				    android:text="Answer 2" 
+				  	android:layout_below="@+id/btnAnswer_1"
+				  	
+				/>  		        		     
+		  
+		  		<Button android:id="@+id/btnAnswer_3" 
+					android:layout_width="fill_parent"
+				    android:layout_height="58dip" 
+				    android:gravity="center_vertical|center_horizontal"
+				  	android:layout_marginLeft="5dip" 
+				  	android:layout_marginRight="5dip"
+        			android:layout_marginTop="5dip"
+				  	android:textSize="18dip"
+				    android:text="Answer 3" 
+				  	android:layout_below="@+id/btnAnswer_2"
+				/>  
+		 
+		  		<Button android:id="@+id/btnAnswer_4" 
+					android:layout_width="fill_parent"
+				    android:layout_height="58dip" 
+				    android:gravity="center_vertical|center_horizontal"
+				  	android:layout_marginLeft="5dip" 
+				  	android:layout_marginRight="5dip"
+        			android:layout_marginTop="5dip"
+				  	android:textSize="18dip"
+				    android:text="Answer 4" 
+				  	android:layout_below="@+id/btnAnswer_3"
+			    /> 
+			</RelativeLayout>
+				    
+
+ 			
+ 			
+		<ImageView
+			android:id="@+id/imgRight"
+			android:layout_width="85dip"
+			android:layout_height="85dip"
+			android:scaleType="centerCrop"
+			android:src="@drawable/quiz_star" 
+			android:layout_alignParentTop="true"
+        	android:layout_alignParentLeft="true" 
+        	android:layout_marginTop="125dip"
+ 		/>			
+			
+		<ImageView
+			android:id="@+id/imgWrong"
+			android:layout_width="85dip"
+			android:layout_height="85dip"
+			android:scaleType="centerCrop"
+			android:src="@drawable/quiz_wrong" 
+			android:layout_alignParentTop="true"
+        	android:layout_alignParentRight="true"
+        	android:layout_marginTop="125dip"
+ 		/>	
+ 		
+		<ImageView
+			android:id="@+id/imgBonus"
+			android:layout_width="85dip"
+			android:layout_height="85dip"
+			android:scaleType="centerCrop"
+			android:src="@drawable/quiz_1x" 
+			android:layout_alignParentTop="true"
+        	android:layout_alignParentLeft="true"
+        	android:layout_marginTop="125dip"
+ 		/>	
+ 			
+ 			
+		<TextView
+			android:id="@+id/txtTimer"
+			android:layout_width="fill_parent"
+			android:layout_height="30dip"
+			android:textSize="14dip"
+			android:textColor="#FFFFFF"
+			android:background="@android:color/transparent"
+			android:text=""
+		  	android:layout_below="@+id/layoutButtons"
+    		android:gravity="center_vertical|center_horizontal"
+		/>		    
+	    
+ 
+ </RelativeLayout>
